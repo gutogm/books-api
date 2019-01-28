@@ -4,6 +4,9 @@ Desenvolvimento de API para cadastro, listagem e retorno de livros.
 
 A API foi construida usando NodeJS v8.x, Postgresql com Ubuntu 16.04
 
+## Padrão de código
+O padrão de código utilizado é o definido pelo airbnb (https://github.com/airbnb/javascript) através do _linter_ (`eslint`).
+
 ## Variaveis de ambiente
 A configuração de acesso a base deve ser feita utilizando variaveis de ambiente do sistema.
 
