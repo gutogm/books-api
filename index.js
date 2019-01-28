@@ -7,7 +7,7 @@
 const http = require('http');
 const debug = require('debug')('books-api:server');
 
-const app = require('../app');
+const app = require('./app');
 
 /**
  * Normalize a port into a number, string, or false.
