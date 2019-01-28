@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const { books } = require('../models');
@@ -25,9 +26,9 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    const { offset=0, limit=10 } = req.query;
-    const meta = await books.findAndCountAll({ offset, limit});
-    return res.status(200).send({ numberBooks: meta.count, books: meta.rows});
+    const { offset = 0, limit = 10 } = req.query;
+    const meta = await books.findAndCountAll({ offset, limit });
+    return res.status(200).send({ numberBooks: meta.count, books: meta.rows });
   } catch (error) {
     return next(error);
   }

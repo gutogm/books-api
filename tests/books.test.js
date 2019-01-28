@@ -1,7 +1,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../app');
-const should = chai.should();
+
 chai.use(chaiHttp);
 
 describe('/POST book', () => {
@@ -33,12 +33,12 @@ describe('/GET books', () => {
     chai.request(app)
       .get('/books')
       .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('object');
-          res.body.should.have.property('numberBooks');
-          res.body.should.have.property('books');
-          res.body.books.should.be.a('array');
-          done();
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('numberBooks');
+        res.body.should.have.property('books');
+        res.body.books.should.be.a('array');
+        done();
       });
   });
 });
@@ -49,14 +49,14 @@ describe('/GET a book', () => {
     chai.request(app)
       .get(`/books/${id}`)
       .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('object');
-          res.body.should.have.property('id');
-          res.body.should.have.property('title');
-          res.body.should.have.property('description');
-          res.body.should.have.property('isbn');
-          res.body.should.have.property('language');
-          done();
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('id');
+        res.body.should.have.property('title');
+        res.body.should.have.property('description');
+        res.body.should.have.property('isbn');
+        res.body.should.have.property('language');
+        done();
       });
   });
 });

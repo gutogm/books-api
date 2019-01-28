@@ -15,7 +15,7 @@ module.exports = {
       },
       isbn: {
         type: Sequelize.STRING,
-        defaultValue: 'Unavailable'
+        defaultValue: 'Unavailable',
       },
       language: {
         type: Sequelize.STRING,
@@ -24,7 +24,7 @@ module.exports = {
     });
   },
 
-  down(queryInterface, Sequelize) {
+  down(queryInterface) {
     return queryInterface.dropTable('books');
   },
 };

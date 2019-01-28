@@ -21,8 +21,7 @@ module.exports = function (sequelize, DataTypes) {
     }, {
       freezeTableName: true,
       timestamps: false,
-    }
+    },
   );
-
   return books;
 };
