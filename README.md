@@ -7,6 +7,13 @@ A API foi construida usando NodeJS v8.x, Postgresql com Ubuntu 16.04
 ## Padrão de código
 O padrão de código utilizado é o definido pelo airbnb (https://github.com/airbnb/javascript) através do _linter_ (`eslint`).
 
+## Instalação de NodeJS v8 no Ubuntu
+```bash
+sudo apt-get update;
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
 ## Variaveis de ambiente
 A configuração de acesso a base deve ser feita utilizando variaveis de ambiente do sistema.
 
