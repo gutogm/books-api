@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon index.js",
     "migrate": "sequelize db:migrate",
-    "tdd": "nodemon -x 'npm test'",
     "test": "export NODE_ENV=test; mocha --timeout 10000 --recursive",
+    "tdd": "nodemon -x 'npm test'",
     "linter": "eslint --quiet '**/*.js'"
   },
   "dependencies": {

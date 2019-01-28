@@ -22,31 +22,28 @@ Exemplo:
 export DB_USERNAME="postgres";
 export DB_PASSWORD="postgres";
 export DB_DATABASE="db_postgres";
-export DB_HOST="localhost";
+export DB_HOST="127.0.0.1";
 export DB_PORT=5432;
 export DB_LOGGING="true";
 ```
 
-## Instalação de dependencias
+## Comandos para execução
+Os comando abaixo são utilizados para instalar as dependencias, rodar migrações de banco e rodar aplicação
 ```bash
-npm install
+# instalando dependencias
+npm install;
+# rodar migrations do projeto
+npm run migrate;
+# Porta padrão 3000
+npm start;
 ```
 
-## Execução
-```bash
-npm start
-```
+## Testes
+Alguns testes basicos foram implementados.
 
-## Tests
+_(Nota: cuidado com as variveis de ambiente configuradas pois utiliza conexão com o banco de dados)_
 ```bash
 npm tests
-```
-
-## Instalação de NodeJS v8 no Ubuntu
-```bash
-sudo apt-get update;
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
 ```
 
 ## Projetos correlacionados
