@@ -16,3 +16,5 @@ RUN rm -rf node_modules
 RUN rm -rf package-lock.json
 
 RUN npm install --quiet
+
+CMD ["npm", "run", "api"]
