@@ -32,10 +32,11 @@ DB_PASSWORD={SENHA} docker-compose up -d
 
 ### Acesso a aplicação
 O comando vai subir 4 containers:
-1 - books-db: banco postgresql
-2 - books-migrate: container responsavel por criar o esquema de banco de dados
-3 - books-api: api de livros
-4 - books-test: uma lista de teste básico envolvendo as chamadas da api
+
+1. books-db: banco postgresql
+2. books-migrate: container responsavel por criar o esquema de banco de dados
+3. books-api: api de livros
+4. books-test: uma lista de teste básico envolvendo as chamadas da api
 
 A api ficará disponivel no http://localhost:3000/books
 
