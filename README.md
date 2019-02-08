@@ -7,7 +7,7 @@ A API foi construida usando NodeJS v8.x, Postgresql com Ubuntu 16.04
 ## Padrão de código
 O padrão de código utilizado é o definido pelo airbnb (https://github.com/airbnb/javascript) através do _linter_ (`eslint`).
 
-## Docker
+## Docker e docker-compose
 A imagem da aplicação está no docker hub
 
 Para subir a aplicação com um banco de dados, só é necessário rodar o seguinte
