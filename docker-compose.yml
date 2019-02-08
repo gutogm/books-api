@@ -1,0 +1,71 @@
+version: '3.3'
+
+services:
+
+  books-db:
+    container_name: books-db
+    image: postgres:9.4
+    expose:
+      - 5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: books-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  books-migrate:
+    container_name: books-migrate
+    image: gutogm/books-api:latest
+    volumes:
+      - ./:/application
+    links:
+      - books-db
+    depends_on:
+      - books-db
+    environment:
+      DB_PASSWORD: ${DB_PASSWORD:-pgpassword}
+    working_dir: /application
+    command: bash -c 'while !</dev/tcp/books-db/5432; do sleep 1; done; npm run migrate'
+
+  books-api:
+    container_name: books-api
+    image: gutogm/books-api:latest
+    volumes:
+      - ./:/application
+    links:
+     - books-db
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+      DB_PASSWORD: ${DB_PASSWORD:-pgpassword}
+    depends_on:
+      - books-db
+      - books-migrate
+    working_dir: /application
+    command: npm run api
+  
+  books-test:
+    container_name: books-test
+    image: gutogm/books-api:latest
+    volumes:
+      - ./:/application
+    links:
+     - books-db
+    expose:
+      - 3001
+    ports:
+      - 3001:3001
+    environment:
+      DB_PASSWORD: ${DB_PASSWORD:-pgpassword}
+    depends_on:
+      - books-db
+      - books-migrate
+      - books-api
+    working_dir: /application
+    command: npm run test
+
+volumes:
+  pgdata: {}

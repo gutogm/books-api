@@ -6,7 +6,7 @@
     "start": "nodemon index.js",
     "api": "node index.js",
     "migrate": "sequelize db:migrate",
-    "test": "export NODE_ENV=test; mocha --timeout 10000 --recursive",
+    "test": "export NODE_ENV=test; mocha --timeout 10000 --recursive ./tests",
     "tdd": "nodemon -x 'npm test'",
     "linter": "eslint --quiet '**/*.js'"
   },
